@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="김지홍의 자재관리 직무 지원 포트폴리오">
+<title>김지홍 | 자재관리 포트폴리오</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap');
+:root{--red:#e94343;--ink:#252525;--muted:#777;--line:#ececec;--soft:#fff6f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Gowun Dodum',sans-serif}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:bold;letter-spacing:-.04em}.logo b{color:var(--red)}
+.nav{display:flex;gap:22px;font-size:13px}.nav a{color:#555;text-decoration:none}
+.hero{min-height:calc(100vh - 65px);display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:42px;padding:48px 0 36px}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--red);font-weight:bold}
+h1,h2,.hand{font-family:'Nanum Pen Script',cursive;font-weight:400}
+h1{font-size:clamp(58px,8vw,96px);line-height:.98;margin:15px 0 10px;letter-spacing:-.03em}
+h1 span{color:var(--red)}.tagline{font-size:18px;line-height:1.7;margin:18px 0 28px;color:#555}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--red);color:white;text-decoration:none;border:0;border-radius:18px;padding:17px 28px;font-weight:bold;font-size:17px;box-shadow:0 9px 20px #e9434330;transition:.2s}
+.cta:hover{transform:translateY(-3px);box-shadow:0 13px 24px #e9434340}.cta span{font-size:22px}
+.hero-note{font-size:12px;color:#999;margin-top:16px}
+.profile-card{border:1px solid var(--line);border-radius:28px;padding:22px;background:#fff;box-shadow:0 16px 50px #2525250b;transform:rotate(1deg)}
+.photo{height:240px;border-radius:19px;background:#eee;display:flex;align-items:center;justify-content:center;color:#999;font-size:13px;border:1px dashed #cfcfcf}
+.profile-bottom{display:flex;align-items:end;justify-content:space-between;padding:19px 3px 3px;gap:12px}
+.profile-bottom strong{font-size:20px}.profile-bottom small{display:block;color:var(--muted);margin-top:5px}
+.stamp{width:66px;height:66px;border:2px solid var(--red);border-radius:50%;display:grid;place-items:center;color:var(--red);font-size:12px;text-align:center;line-height:1.2;transform:rotate(-12deg)}
+.ticker{overflow:hidden;background:var(--soft);border-block:1px solid #ffe5e2;padding:15px 0;white-space:nowrap}
+.ticker-track{display:flex;width:max-content;animation:marquee 27s linear infinite}
+.ticker span{font-weight:bold;color:#555;margin:0 23px;font-size:14px}.ticker i{color:var(--red);font-style:normal}
+@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:72px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px;gap:20px}
+h2{font-size:46px;margin:0;line-height:1}.section-head p{color:var(--muted);font-size:13px;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{border:1px solid var(--line);border-radius:22px;padding:25px;background:#fff}.panel.soft{background:var(--soft);border-color:#ffe5e2}
+.panel h3{font-size:16px;margin:0 0 13px}.panel p{line-height:1.8;color:#555;margin:0;font-size:14px}
+.stat{font-family:'Nanum Pen Script',cursive;color:var(--red);font-size:52px;line-height:1}.stat small{font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#777}
+.strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.strength{border:1px solid var(--line);border-radius:18px;padding:20px}
+.strength .emoji{font-size:23px}.strength h3{margin:9px 0 6px}.strength p{font-size:13px;line-height:1.65;color:#777;margin:0}
+.experience{background:#fffafa}.cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:#f1aaaa #fff}
+.exp-card{flex:0 0 min(410px,86vw);scroll-snap-align:start;border:1px solid var(--line);border-radius:23px;background:#fff;padding:24px;min-height:285px;display:flex;flex-direction:column}
+.exp-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.pill{font-size:11px;color:var(--red);background:var(--soft);border-radius:30px;padding:7px 11px}.date{font-size:12px;color:#999}
+.exp-card h3{font-size:21px;margin:22px 0 7px}.role{font-size:13px;color:var(--red);font-weight:bold}
+.exp-card p{font-size:14px;line-height:1.75;color:#666}.exp-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:#888}
+.slider-controls{display:flex;gap:8px}.circle{border:1px solid var(--line);background:#fff;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px}
+.circle:hover{border-color:var(--red);color:var(--red)}
+.project-note{margin-top:18px;border:1px solid #ffe5e2;background:#fff;padding:22px 24px;border-radius:20px}
+.project-note h3{font-size:15px;margin:0 0 8px}.project-note p{font-size:13px;color:#666;line-height:1.8;margin:0}
+.private-label{display:inline-block;color:var(--red);font-size:11px;background:var(--soft);border-radius:30px;padding:5px 9px;margin-top:10px}
+.qual-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{background:#f7f7f7;border-radius:30px;padding:10px 14px;font-size:13px}
+.quote{background:var(--red);color:white;border-radius:24px;padding:28px;margin-top:18px}
+.quote small{opacity:.8}.quote blockquote{font-family:'Nanum Pen Script',cursive;font-size:34px;margin:8px 0 0}
+footer{padding:34px 0 45px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer p{font-size:12px;color:#999;margin:5px 0 0}.email{color:var(--red);text-decoration:none;font-weight:bold;font-size:14px;overflow-wrap:anywhere}
+@media(max-width:720px){
+.wrap{width:min(100% - 30px,540px)}.nav{gap:12px;font-size:11px}
+.hero{grid-template-columns:1fr;gap:28px;padding:45px 0 38px;min-height:auto}
+h1{font-size:76px}.tagline{font-size:16px}.profile-card{max-width:390px;width:100%;margin:auto}.photo{height:190px}
+section{padding:54px 0}.section-head{align-items:start;flex-direction:column}
+.about-grid,.qual-grid{grid-template-columns:1fr}.strengths{grid-template-columns:1fr}
+.strength{display:grid;grid-template-columns:34px 1fr;column-gap:8px}.strength .emoji{grid-row:span 2}
+.strength h3{margin:0 0 4px}.strength p{grid-column:2}footer{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}}
+</style>
+</head>
+<body>
+<header class="wrap topbar">
+  <div class="logo">JH<b>.</b></div>
+  <nav class="nav" aria-label="주요 메뉴"><a href="#about">소개</a><a href="#experience">경험</a><a href="#contact">연락</a></nav>
+</header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">MATERIAL MANAGEMENT · PORTFOLIO</div>
+      <h1>안녕하세요,<br><span>김지홍</span>입니다!</h1>
+      <p class="tagline">자동차공학과 4학년<br>꾸준한 몰입과 협력, 경청의 태도로<br>함께 일하는 자재관리 직무 지원자입니다.</p>
+      <a class="cta" href="#about">포트폴리오 보기 <span>↘</span></a>
+      <div class="hero-note">맡은 일에 오래 집중하고, 함께하는 사람의 이야기에 귀 기울입니다.</div>
+    </div>
+    <div class="profile-card">
+      <div class="photo">사진을 넣을 자리</div>
+      <div class="profile-bottom"><div><strong>김지홍</strong><small>자동차공학과 · 4학년</small></div><div class="stamp">함께<br>꾸준히</div></div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-label="핵심 역량 키워드">
+    <div class="ticker-track" aria-hidden="true">
+      <span>성실함 <i>✦</i></span><span>협력성 <i>✦</i></span><span>경청 <i>✦</i></span><span>꾸준한 몰입 <i>✦</i></span><span>팀워크 <i>✦</i></span><span>책임감 <i>✦</i></span>
+      <span>성실함 <i>✦</i></span><span>협력성 <i>✦</i></span><span>경청 <i>✦</i></span><span>꾸준한 몰입 <i>✦</i></span><span>팀워크 <i>✦</i></span><span>책임감 <i>✦</i></span>
+    </div>
+  </div>
+
+  <section class="wrap" id="about">
+    <div class="section-head"><h2>저를 소개합니다</h2><p>꾸준히 몰입하고, 함께 성장합니다</p></div>
+    <div class="about-grid">
+      <article class="panel"><h3>ABOUT ME</h3><p>봉사하기를 좋아하며 현재까지 총 955시간의 봉사 활동을 이어왔습니다. 한 기관에서 오래 활동할 만큼 꾸준함과 지구력을 갖추고 있으며, 관심 있는 일에는 하루 9시간 이상 몰두합니다. 또한 다른 사람과 협력하고 이야기를 경청하는 태도를 중요하게 생각합니다.</p></article>
+      <article class="panel soft"><div class="stat">955<small> 시간</small></div><h3 style="margin:8px 0">누적 봉사 시간</h3><p>꾸준한 참여로 쌓아 온 봉사 경험</p></article>
+    </div>
+    <div class="strengths">
+      <article class="strength"><div class="emoji">🌱</div><h3>성실함</h3><p>한 기관에서 오래 활동할 만큼 지구력과 꾸준함을 갖추고 있습니다. 관심 있는 일에는 하루 9시간 이상 몰두합니다.</p></article>
+      <article class="strength"><div class="emoji">🤝</div><h3>협력성</h3><p>다른 사람들과 협력하며 함께 목표를 이루는 것을 중요하게 생각합니다.</p></article>
+      <article class="strength"><div class="emoji">👂</div><h3>경청</h3><p>상대방의 이야기를 잘 듣고 의견을 이해하려고 노력합니다.</p></article>
+    </div>
+  </section>
+
+  <section class="experience" id="experience">
+    <div class="wrap">
+      <div class="section-head"><div><h2>경험과 활동</h2><p style="margin-top:9px">카드를 옆으로 넘겨 확인해 보세요.</p></div><div class="slider-controls"><button class="circle" id="prev" aria-label="이전 경험">←</button><button class="circle" id="next" aria-label="다음 경험">→</button></div></div>
+      <div class="cards" id="cards" tabindex="0" aria-label="경험 카드 슬라이더">
+        <article class="exp-card">
+          <div class="exp-top"><span class="pill">캡스톤 디자인</span><span class="date">2025년 2학기</span></div>
+          <h3>일자리 실시간 추천 사이트</h3><div class="role">3인 팀 · 조사 담당</div>
+          <p>워크넷 기관과 협력하여 개인의 성격, 취향, 취미 등을 입력하면 그에 맞는 일자리를 실시간으로 공고해 주는 사이트를 제작했습니다.</p>
+          <div class="exp-foot">수업 2등</div>
+        </article>
+        <article class="exp-card">
+          <div class="exp-top"><span class="pill">개인 제작 활동</span><span class="date">2026.11 ~ 현재</span></div>
+          <h3>게임과 음악 제작</h3><div class="role">제작</div>
+          <p>AI를 활용해 게임과 음악을 제작하고 있습니다.</p>
+          <div class="exp-foot">제작 활동 진행 중</div>
+        </article>
+      </div>
+      <article class="project-note">
+        <h3>직무 연결 프로젝트 · 일자리 실시간 공고 사이트</h3>
+        <p>개인의 성격·취향·취미 정보를 바탕으로 적합한 일자리를 실시간으로 보여주는 사이트입니다. 워크넷 기관과 협력했으며, 개인 소장 조건으로 진행되어 사이트는 공개할 수 없습니다.</p>
+        <span class="private-label">협력 프로젝트 · 비공개</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="section-head"><h2>보유 자격과 관심사</h2><p>배우고 쌓아 온 것들</p></div>
+    <div class="qual-grid">
+      <article class="panel"><h3>자격증</h3><div class="chips"><span class="chip">한국사 4급</span><span class="chip">ITQ 자격증</span><span class="chip">바리스타 1급</span></div></article>
+      <article class="panel"><h3>관심사 · 취미</h3><div class="chips"><span class="chip">영상 편집</span><span class="chip">게임 제작</span><span class="chip">음악 제작</span></div></article>
+    </div>
+    <div class="quote"><small>MY MOTTO</small><blockquote>“우리는 음지에서 일하고 양지를 지향한다”</blockquote></div>
+  </section>
+</main>
+<footer class="wrap" id="contact">
+  <div><strong>김지홍</strong><p>자재관리 직무 지원 포트폴리오</p></div>
+  <a class="email" href="mailto:sohyun1894@gmail.com">sohyun1894@gmail.com</a>
+</footer>
+<script>
+const rail=document.getElementById('cards');
+document.getElementById('prev').addEventListener('click',()=>rail.scrollBy({left:-Math.min(430,rail.clientWidth*.85),behavior:'smooth'}));
+document.getElementById('next').addEventListener('click',()=>rail.scrollBy({left:Math.min(430,rail.clientWidth*.85),behavior:'smooth'}));
+rail.addEventListener('keydown',e=>{if(e.key==='ArrowRight')rail.scrollBy({left:360,behavior:'smooth'});if(e.key==='ArrowLeft')rail.scrollBy({left:-360,behavior:'smooth'});});
+</script>
+</body>
+</html>
